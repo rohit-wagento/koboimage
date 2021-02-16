@@ -95,7 +95,7 @@ class ItemFactory extends \Magento\Search\Model\Autocomplete\ItemFactory
 
         $productData = [
             'title' => $product->getName(),
-            'image' => $this->getImageUrl($product),
+            'image' => $product->getImageKobo() ? $product->getImageKobo() : $this->getImageUrl($product),
             'url'   => $product->getProductUrl(),
             'price' => $this->renderProductPrice($product, \Magento\Catalog\Pricing\Price\FinalPrice::PRICE_CODE),
         ];
